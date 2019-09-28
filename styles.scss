@@ -1,0 +1,83 @@
+// $font-size: 50px;
+// $dark-red: #a70b0b; keeping as examples
+
+#__next {
+  height: 100vh;
+  // background: floralwhite;
+}
+
+.header-main {
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  padding: 1rem;
+  min-height: 10vh;
+  width: 100vw;
+
+  &:hover {
+    background-color: floralwhite;
+  }
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokemon {
+  line-height: normal;
+  letter-spacing: 2px;
+  font-size: 3rem;
+  background: linear-gradient(to right, #b5cad9 0%, #145383 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: default;
+}
+
+.pokemon-summoned-image {
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.with-background {
+  min-height: 100vh;
+  padding: 0 !important;
+  // background-image: url('/static/img/wall-b.png') !important;
+  // background-size: cover !important;
+}
+
+.header-right {
+  background: #b5cad9;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: black !important; 
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.roster {
+  width: fit-content;
+  background: linear-gradient(to right, #dea247 0%, #82d4f5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+
+.heart-img {
+  max-width: 100%;
+  max-height: 5vh;
+  width: auto;
+  height: auto;
+  display: block;
+  position: absolute;
+  right: 7vh;
+  bottom: 5vh;
+}
