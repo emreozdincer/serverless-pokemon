@@ -1,5 +1,5 @@
 // next.config.js
-const withSass = require('@zeit/next-sass')
+const withSass = require('@zeit/next-sass');
 module.exports = withSass({
   /* config options here */
   exportPathMap() {
@@ -15,7 +15,7 @@ module.exports = withSass({
           }
         }),
       {}
-    )
+    );
 
     const result = {
       '/': { page: '/' },
@@ -24,6 +24,6 @@ module.exports = withSass({
       ...pokemonPages,
     };
 
-    return result
+    return result;
   },
-})
+});

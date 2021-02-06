@@ -1,9 +1,9 @@
 import Router from 'next/router';
-import { Container, Divider } from 'semantic-ui-react'
+import { Container, Divider } from 'semantic-ui-react';
 import { join } from 'path';
 
 export default (props) => {
-  const title = props.title ? props.title : 'Reactémon.'
+  const title = props.title ? props.title : 'Reactémon.';
   const titleElement =
     <div className="pokemon">
       {
@@ -14,7 +14,7 @@ export default (props) => {
             {title}
           </span>
       }
-    </div>
+    </div>;
 
   return (
     <>
@@ -34,5 +34,5 @@ export default (props) => {
       </div>
       <Divider style={{ marginTop: 0, marginBottom: '3rem' }} />
     </>
-  )
+  );
 };

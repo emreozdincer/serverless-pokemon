@@ -10,7 +10,7 @@ class Home extends React.Component {
     pokemonIndex: 0,
     selectedPokemon: '',
     pokemons: [],
-  }
+  };
 
   async componentDidMount() {
     await fetch(Constants.API_GET_POKEMON_NAMES, {
@@ -25,7 +25,7 @@ class Home extends React.Component {
     let { pokemons, pokemonIndex } = this.state;
 
     setInterval(() => {
-      pokemonIndex = ( pokemonIndex + 1 ) % 5;
+      pokemonIndex = (pokemonIndex + 1) % 5;
       this.setState({
         selectedPokemon: pokemons[pokemonIndex],
         pokemonIndex,

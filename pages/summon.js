@@ -8,12 +8,12 @@ class Summon extends React.Component {
   state = {
     loading: true,
     visible: false,
-  }
+  };
 
   componentDidMount() {
     setInterval(() => {
       this.setState({ loading: false }, () =>
-        this.setState({ visible: true }))
+        this.setState({ visible: true }));
     }, 1000);
   }
 
@@ -33,7 +33,7 @@ class Summon extends React.Component {
             href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
           />
         </Head>
-        {!loading && <Header title={pokemon}/>}
+        {!loading && <Header title={pokemon} />}
         <Container>
           <div className="pokemon-title">
             {loading && (
@@ -43,7 +43,7 @@ class Summon extends React.Component {
                 </Placeholder.Header>
               </Placeholder>
             )}
-            
+
             {loading ? (
               <Placeholder className="pokemon-summoned-image" >
                 <Placeholder.Image rectangular />
@@ -61,7 +61,7 @@ class Summon extends React.Component {
           </div>
         </Container>
       </>
-    )
+    );
   }
 }
 

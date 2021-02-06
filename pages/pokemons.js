@@ -13,7 +13,7 @@ function Pokemons() {
           href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         />
       </Head>
-      <Header/>
+      <Header />
       <Container>
         <PokeCards></PokeCards>
       </Container>

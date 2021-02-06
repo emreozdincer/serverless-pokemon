@@ -1,7 +1,7 @@
-import _ from 'lodash'
-import React, { Component, Fragment } from 'react'
+import _ from 'lodash';
+import React, { Component, Fragment } from 'react';
 import Head from 'next/head';
-import { Button, Card, Image, Placeholder, Transition } from 'semantic-ui-react'
+import { Button, Card, Image, Placeholder, Transition } from 'semantic-ui-react';
 
 const cards = [
   {
@@ -22,10 +22,10 @@ const cards = [
     header: 'Suicune',
     description: 'Suicune (Japanese: スイクン Suicune) is a Water-type Legendary Pokémon',
   },
-]
+];
 
 export default class PokeCards extends Component {
-  state = { loading: true, visible: false }
+  state = { loading: true, visible: false };
 
   componentDidMount() {
     setInterval(() => {
@@ -35,7 +35,7 @@ export default class PokeCards extends Component {
 
 
   render() {
-    const { loading, visible } = this.state
+    const { loading, visible } = this.state;
 
     return (
       <Fragment>
@@ -91,6 +91,6 @@ export default class PokeCards extends Component {
           ))}
         </Card.Group>
       </Fragment>
-    )
+    );
   }
 }
