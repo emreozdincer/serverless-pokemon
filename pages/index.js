@@ -5,7 +5,6 @@ import { Card, Container, Loader } from 'semantic-ui-react';
 import Header from "../components/header";
 import "../styles.scss";
 import Constants from '../constants';
-
 class Home extends React.Component {
   state = {
     pokemonIndex: 0,
@@ -21,27 +20,22 @@ class Home extends React.Component {
     })
       .then((response) => response.json())
       .then(responseJson => this.setState({ pokemons: responseJson }))
-      .catch(err => console.error(err));
+      .catch(err => this.setState({ pokemons: Constants.POKEMONS })); // Mocked case
 
-    let { percent, pokemons, pokemonIndex } = this.state;
+    let { pokemons, pokemonIndex } = this.state;
 
     setInterval(() => {
+      pokemonIndex = ( pokemonIndex + 1 ) % 5;
       this.setState({
-        percent: (percent + Math.floor(Math.random() * 5)) % 100,
-      })
-    }, 1000);
-
-    setTimeout(() => {
-      this.setState({
-        selectedPokemon: pokemons[pokemonIndex++ % 5],
+        selectedPokemon: pokemons[pokemonIndex],
         pokemonIndex,
-      })
+      });
     }, 1500);
   }
 
   render() {
     const randInt = Math.floor(Math.random() * 5);
-    const pokemon = Constants.POKEMONS[randInt];
+    const randomPokemon = Constants.POKEMONS[randInt];
     const { selectedPokemon } = this.state;
 
     return (
@@ -57,7 +51,7 @@ class Home extends React.Component {
           <div >
             <Container >
               <Card.Group>
-                <Card raised={false} color={"teal"} onClick={() => Router.push(`/summon?slug=${pokemon}`, '/summon/some-legendary-pokemon')}>
+                <Card raised={false} color={"teal"} onClick={() => Router.push(`/summon?slug=${randomPokemon}`, '/summon/some-legendary-pokemon')}>
                   <Card.Content>
                     <Card.Header>Legendary Pokemon</Card.Header>
                     <Card.Meta>Summon a legendary pokemon!</Card.Meta>
